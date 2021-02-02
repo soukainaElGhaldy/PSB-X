@@ -1,0 +1,525 @@
+---
+title:
+  - "Exam in Mathematics & R"
+author: "Soukaina EL GHALDY"
+date: "2 Février 2021"
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    df_print: paged
+    toc: yes
+  word_document:
+    toc: yes
+---
+
+**Petite note avant de débuter** 
+
+Veuillez téléchargez ce travail en PDF ou utilisez la version Rmd afin d'accèder aux liens des travaux mentionnés ci-dessous.
+
+**LINK to the rmd version** : [https://github.com/soukainaElGhaldy/PSB-X]
+
+\newpage
+
+# I. Les travaux traités en Maths
+
+# 1. Critères d'évaluation
+
+Dans la première partie de ce travail nous allons évaluer l'ensemble des travaux présentés en maths selon 5 critères sur un échelle de 4/5 pour chaque critère:
+
+- *Pertinence du sujet* : le sujet est-il en coordination avec le cursus.
+- *Le plan* : la structure du sujet, les sources,.. etc.
+- *L'utilisation du package Latex* : pour l'ensemble des expressions mathématiques.
+- *La compréhension globale et qualité rédactionnnel*: fautes, compréhension.. etc.
+- *L'esthétiaue du rendu*: la mise en page, les shémas.. etc.
+
+# 2. Evaluation du travail personnel en maths
+
+## Titre 1 : Machine Learning for Financial Products Recommendation
+
+Lien: [Cliquez ici](https://github.com/soukainaElGhaldy/PSB-X/blob/main/Mathematics/maths.pdf)
+
+Noms d'auteurs : **Soukaina El Ghaldy**
+
+#### **Synthèse**
+
+Dans cette thèse de doctorat, monsieur BARREAU souligne les difficultés rencontrés lors de l'application du Machine learning dans la prédiction de la demande clients BNP (investisseurs) sur les marchés financiers. L'auteur introduit 2 algorithmes afin de répondre à cette problèmatique. L'étudiante a choisi d'en présenter un: **l'algorithme 'Experts Network'**. Le réseau est constitué de 2 blocs: 
+
+- le Bloc 'Gating' qui va récupérer en entrée les informations en temps réel des investisseurs et va les classer en probabilités d'appartenance à un cluster d'experts grace à une activation softmax.
+
+- Ensuite un Bloc 'Expert' qui va récupérer les probabilités et choisir la plus grande valeur afin de l'affecter définitivement au groupe 'Expert' approprié.
+
+L'algorithme va s'entrainer au fur et à mesure afin de calculer la probabilité que tel investisseur soit affecté à tel expert et donc prédire le comportement d'un investisseur x.
+
+#### **Expressions mathématiques intéressantes**
+
+La fonction mathématique la plus importante de l'algorithme est la suivante :
+
+\[ f (x\backslash a) =  \sum p(i\backslash a)f_i(x) \]
+
+Cette expression va, pour un groupe d'experts final x récupérer l'ensemble des probabilités que les investisseurs ayant un critère d`appartenance *a* soient affecté à la classe d'expert *i*.
+
+#### **Evaluation sur critères**
+
+- *Pertinence du sujet* : (4/4) Sujet très intéressant et complexe.
+- *Le plan* : (2/4) La structure peut-être améliorée.
+- *L'utilisation du package Latex* : (2/4) Latex utilisé uniauement sur 2 formules.
+- *La compréhension globale et qualité rédactionnnel*: (3/4) Comprénsible. 
+- *L'esthétiaue du rendu*: (4/4) Utilisation de shémas et bon rendu RMD.
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Le sujet de la thèse est très intéressant mais très complexe. Le travail fournit montre un effort considérable. Le niveau de complexité a pénalisé la qualité du rendu de l'étudiante. Il aurait été intéressannt d'aborder le reste des algorithmes de la thèse.
+
+# 3. Evaluation des 5 autres travaux en maths
+
+## Titre 2 : Apprentissage par Arbres de Décisions
+
+Lien: [Cliquez ici](https://github.com/aserreau/PSB1/blob/main/Travaux%20Mathématiques/Article_Arbre_de_décision.pdf)
+
+Noms d'auteurs : **BRETONNIERE Corentin**, **SERREAU Antoine**, **GUIGON Benjamin** 
+
+#### **Synthèse**
+
+Les étudiants présentent une méthode d'apprentissage par arbres, appelée arbre de décision, il existe 2 types pour la prédiction, pour les données : 
+- *Quantitatives* (on utilise un arbre de régression), 
+- et *Qualitatives* (on utilise un arbre de classfication). 
+
+Un arbre décision est un graphe orienté, dont les feuilles portent la valeur de la variable à prédire (*y'*). Le reste des noeuds représentent les critères de split (les inputs) et les arètes sont les règles de split (les tests). Par exemple, en temps donné, un arbre de classification avec 3 noeuds, où la racine va recevoir un montant imposable, les feuilles l'imposition, et les arètes, les seuils d'exonération. Si, le montant imposable est de 45 000 et le test d'exonération est de 15 000. Donc, le test montre que 45 000 n'est pas inférieur ou égal à 15000, mais supérieur à 15000, la réponse obtenue est alors un refus d'exonération. D'ailleurs, la pureté est la mesure utilisée afin de calculer le coût d'un noeud, qui va fluctuer selon l'exactitude du choix de la variable de décision. La pureté démontre l'appartenance d'une variable (et les individus) à une classe. 
+Enfin, les arbres de régression sont constituées de variables quantitatives et fonctionnent comme une régression. Les arbres de classification traitent des variables avec des caractères qualificatifs et discriminateures. Cependant, ces dernières présentent des limites comme sur-apprentissage, en apprenant du cas par cas; une sensibilité a des fluctuations d'échantillon, une variation peut changer tout l'arbre.
+
+#### **Expressions mathématiques intéressantes**
+
+\[ G_i =  1 - \sum_{k=1}^{n} p_{i,k^{2}}  \]
+
+La pureté permet definir l'appartenance d'une variable (et les instances) à une classe.
+
+\[ J(k) = (\frac{m_{gauche}}{m})* G_{gauche} + 
+          (\frac{m_{droite}}{m})*G_{droite} \]
+
+Coût du noeud permet de mesurer si le critère du split est bon. C'est-à-dire, si la variable choisie est bonne. Il faut souligner que le coût du noeud utilise la notion de pureté.
+
+Enfin, le côut du noeud et la pureté permettent de construire des arbres de décisions plus optimales. Si les critères de splits sont mal choisis, on peut avoir des arbres plus profonds et ainsi nous rapprocher d'un problème de sur-apprentissage.
+
+#### **Evaluation sur critères**
+
+- *Pertinence du sujet* : (4/4) Sujet très intéressant.
+- *Le plan* : (3/4) pas de plans.
+- *L'utilisation du package Latex* : (0/4) Format RMD manquante, impossible d'évaluer les formules Latex.
+- *La compréhension globale et qualité rédactionnnel*: (4/4) très bien écrit. 
+- *L'esthétiaue du rendu*: (3/4) Utilisation de shémas et des images, mise en page á améliorer.
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Bon travail et assez bien expliqué. Toutefois, les étudiants n'expliquent pas les notions d'entropie et le gain d'information pour choisir la bonne variable afin de contruire les branches de l'arbre de décision et ainsi réduire sa profondeur.
+
+## Titre 3 : KNN 
+
+Lien: [Cliquez ici](https://github.com/aserreau/PSB1/blob/main/Travaux%20Mathématiques/Article_KNN.pdf)
+
+Noms d'auteurs : **BRETONNIERE Corentin**, **SERREAU Antoine**, **GUIGON Benjamin**
+
+#### **Synthèse**
+
+K-Nearest Neighbors (KNN) est un algorithmes d’apprentissage supervisé et assez gourmand, car il va conserver toutes les données de la phase d’apprentissage afin de calculer des hypothèses pendant la phase de test.
+
+Même si KNN est "gourmand", l'algorithme est assez simple et rapide. On disposed'un ensemble de données (instances) dans un espace et on choisit K points qui regrouperont des sous-ensembles de données. Une fois que les K points sont un cluster de données (en utilisant une calcul de distance afin de regrouper les données), le test se fait en calculant la régression ou par le vote majoritaire pour la classification.
+
+Enfin, KNN est un algorithme simple et rapide à déployer. On peut l'utiliser pour faire de la la régression et la classification et en étant donnée qu'il fait de l'aprentissage supervisé, il n'est pas nécessaire de faire des hypothèses supplémentaires et d’ajuster plusieurs paramètres afin de construire un modèle. Par contre, c'est est un algorithme très gourmand, car il l'utilise l’ensemble de données d'apprentissage, et il est assez sensible à la qualité des données.
+
+#### **Expressions mathématiques intéressantes**
+
+L'algorithme se base sur un calcul de distance entre les données disposées dans un espace. Les fonctions de distance plus connues sont la distance Euclidienne, la distance de Manhattan, la distance de Minkowski, la distance de Hamming, la distance de distance de Chebyshev et etc. 
+
+La distance Euclidienne est une distance qui se calcule par une droite entre deux points. La distance de Manhattan est une distance qui calcule la longueur d'un chemin entre deux points. Par exemple: la distance entre deux blocks en Manhattan.
+
+Un point à souligner, c'est le choix de K. K est le nombre d’instances du cluster et il n'y a pas de méthodes spécifiques pour trouver ce nombre et la meilleure fonction de distance. Cela se fait souvent par des essai-erreurs (force brute), en calculant les erreurs pour chaque valeur de K. Cependant, on suggère que le nombre d'instance dans le cluster doit être impair, afin de faciliter le calcul du vote majoritaire.
+
+#### **Evaluation sur critères**
+
+- *Pertinence du sujet* : (4/4) Sujet très intéressant.
+- *Le plan* : (3/4) pas de plans.
+- *L'utilisation du package Latex* : (0/4) Format RMD manquante, impossible d'évaluer les formules Latex.
+- *La compréhension globale et qualité rédactionnnel*: (4/4) très bien écrit. 
+- *L'esthétiaue du rendu*: (3/4) Utilisation de shémas et des images, mise en page á améliorer.
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Bon travail et assez bien expliqué. Toutefois, l'étudiant ne mentionne pas que le KNN peut être aussi non supervisé. Aussi, Il ne spécifique pas que le coût de l’algorithme réside dans la conservation des données et la fonction de distance. L'étudiant n'introduit pas la notion de vote majoritaire.
+
+
+## Titre 4 : Cryptographie et théories des nombres
+
+Lien: [Cliquez ici](https://github.com/ARSICMrk/ARSIC_PSBx/blob/main/Maths_BD/Cryptographie/Cryptographie.pdf)
+
+Noms d'auteurs : **ARSIC Marko**, **ROBACHE William**
+
+#### **Synthèse**
+
+La cryptographie anciennement utilisée que dans la domaine a su trouver sa place parmis le grand public. Il existe 2 types de cryptages: 
+
+- Un cryptage à clé symétrique; c'est lorsqu'il existe uniquement 1 clé pour le chiffrement et le déchiffrement.D'où les limites de son utilisation. Nous retrouvons dans cette catégorie plusieurs exemple comme (le codage césar ou le  codage Vigénère).
+
+- Un cryptage à clé asymétrique;quant à lui utilise certes un code unique mais fontionne comme une boite aux lettres. N'ímporte qui peut envoyer un message au récepteur mais seul lui peut le lire.
+
+#### **Expressions mathématiques intéressantes**
+
+Le principe de fonction unique associe une valeur $x$ à une valeur $f{x}$ qui est difficile à retrouver.Ce principe est utilisée à plusieurs niveau de difficulté pour les génerations de clés asymétriques plus fiables.
+
+Le principe de fonction unique avec trappe lorsque l'inversion est impossible sauf avec une clé secrète. Nous définissons 2 fonctions : 
+
+- Une fonction $f_{C}$ de cryptage utilisée pour la transmission et une autre $f_{D}$ qui va jouer le rôle de la clé.
+
+\[ f_{D}({M})=  f_{D}[f_{C}({m})] = m \]
+
+Le célèbre système RSA est basé sur un système unique avec trappe et son cryptage repose sur la difficulté de factoriser un nombre qui est le produit de 2 grands nombres premiers. On défint 2 nombres premiers *p* et *q*. Ensuite la fonction de décryptage qui est l'exponentation *e* à la puissance *d* modulo *n* doit être écrite tel que le choix de $e$ et de $d$ suivent: 
+
+$e.d = 1 [(p-1)(q-1)]$.
+
+#### **Evaluation sur critères**
+
+- *Pertinence du sujet* : (4/4) Sujet très intéressant et complet.
+- *Le plan* : (2/4) pas de plan énoncé mais bonne structure.
+- *L'utilisation du package Latex* : (4/4) Utilisation latex.
+- *La compréhension globale et qualité rédactionnnel*: (4/4) Très bien expliqué avec peu de fautes. 
+- *L'esthétiaue du rendu*: (2/4) rendu simple et correcte.
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Le sujet est très intéressant car il représente la bases de plusieurs technologies (blockchain, ssh keys..). La Stratégie d'explication simple et droit vers le but ajoué en la faveur de l'étudiant mais il serait peut-être plus intéréssant d'approfondir le sujet avec l'exemple d'une technologie utilisant la cryptographie moderne.
+
+## Titre 5 : Validation croisée
+
+Lien: [Cliquez ici](https://github.com/Nicolas-all/PSB1/blob/main/Validation-Croisée.pdf)
+
+Noms d'auteurs : **Rindra LUTZ** & **Nicolas Allix** 
+
+#### **Synthèse**
+
+En apprentissage automatique, la *Cross-validation* ou validation croisée est une méthode d'estimation de la fiabilité d'un algorithme de Machine learning en se basant sur destechniques d'échantillonnage. 
+
+Ils ont commencé leur travail par l'explication des méthodes pédictives et les méthodes descriptives puis en ont donnant des exemples. Puis ils ont entamé l'explication du modèle enexposant 3 méthodes principales : Leave-One-Out Cross-Validation (LOOCV), Leave-k-Out Cross-Validation (LKOCV) et k-fold cross-validation. Ils ont également évoqué le risque de sur-apprentissage vu la complexité du modèle.
+
+#### **Expressions mathématiques intéressantes** 
+
+(Ces Données sont manquantes).
+
+#### **Evaluation sur critères**
+
+- *Pertinence du sujet* : (4/4) Sujet très intéressant et assez complexe.
+- *Le plan* : (2/4) La structure du travail peut-être améliorée.
+- *L'utilisation du package Latex* : (0/4) Latex non utilisé.
+- *La compréhension globale et qualité rédactionnnel*: (4/4) Comprénsible. 
+- *L'esthétiaue du rendu*: (2/4) La mise en page peut-être améliorée, bibliographie manquante...
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Les étudiants ont fait l'effort d'explication par des mots simples des concepts complexes et rendre par la suite ces modèles abstraits assez accessibles. Tout de même la mise en page du document peut-être largement améliorée.
+
+## Titre 6 : K-means ++
+
+Lien: [Cliquez ici](https://github.com/Lucasblld/PSBX/blob/main/maths/k-means.pdf)  
+
+Noms d'auteurs : **Lucas BILLAUD**
+
+#### **Synthèse**
+
+K-means est un algorithme de clustering pour l’apprentissage non supervisé. C’est un algorithme assez simple et rapide. On dispose un ensemble de données (instances) dans un espace et on choisit K points qui regrouperont des sous-ensembles de données. Une fois que les K points sont un cluster de données(en utilisant une calcul de distance afin de regrouper les données), le test se fait en calculant la distance du plus proche cluster.
+
+Comme la régression linéaire, on peut utiliser K-means pour faire de la classification. En étant un algorithme simple et rapide à déployer sa complexité peut être quadratique O(N^2). Donc, l’intention de l’optimiser et proposer une 
+nouvelle variante, K-means++. Différemment de la version de base où les cluster sont placés de façon aléatoire
+au départ et se stabilisent au fur et à mesure, la variante cherche à augmenter la précision ainsi que la rapidité  de K-means en plaçant les K cluster uniformément (avec une pondération donnée par une function appelée  D^2 weighting. Dans un mot, K-means++ possède  complexité O(log). Cependant le choix du nombre de cluster pose toujours un problème.
+
+#### **Expressions mathématiques intéressantes**
+
+K-means est un algorithme qui essaye de trouver un centroid d’une ensemble de données (cluster) dispose dans un espace. L’algorithme est quadratique, car tantque n’y a pas de changement (stabilisation) l’exécution ne s’arrête pas. Il faut aussi souligner que la fonction utilisé afin de calculer le centroid joue un role assez important si on veut vraiment calculer le coût d’execution. Normalement, K-means utilise la distance euclidienne qui est la distance d’une ligne droite entre deux points.  
+
+K-means++ offre une étape de pré-traitement afin de placer les K cluster uniformément sur l’espace où les données sont disposés. La fonction D^2 weighting est responsable pour cette optimisation qui s’en suit le théorème suivant : Theorem 3.1.. Dans une phrase, la démonstration consiste à montrer que les clusters formés avec K-means++ sont plus précis.
+
+#### **Evaluation sur critères**
+
+- *Pertinence du sujet* : (4/4) algorithme très intéressant et assez populaire.
+- *Le plan* : (2/4) La structure peut-être améliorée, pas de plans.
+- *L'utilisation du package Latex* : (0/4) Pas de RMD impossible de vérifier les expressions en Latex.
+- *La compréhension globale et qualité rédactionnnel*: (3/4) Comprénsible. 
+- *L'esthétiaue du rendu*: (3/4) Utilisation de shémas et bon rendu.
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Le choix du sujet était très bien pensé. Le K-means est un algorithme de clustering très populaire dans le domaine du Machine learning. Mais il aurait été plus intéressant d'introduire le problème du choix du nombre de clusters.
+
+# II. Les travaux traités en programmation R
+
+# 1. Critères d'évaluation
+
+Dans la deuxième partie de ce travail nous allons évaluer l'ensemble des travaux présentés en maths selon 5 critères sur un échelle de 4/5 pour chaque critère:
+
+ 
+- *Le plan* : la structure du sujet, les sources,.. etc.
+- *la lisibilité du code R* : Espaces, commentaires..
+- *La compréhension globale et qualité rédactionnnel*: fautes, compréhension.. etc.
+- *L'esthétiaue du rendu*: la mise en page, les shémas.. etc.
+- *Bibliographie* 
+
+
+# 2. Evaluation du travail personnel en R
+
+## Titre 1 : dplyr
+
+Lien: [Cliquez ici](https://github.com/soukainaElGhaldy/PSB-X/blob/main/R_packages/dplyr_package/dplyr-tuto.pdf) 
+
+Noms d'auteurs : **Soukaina EL GHALDY** & **Jiayue Liu**
+
+#### **Synthèse**
+
+Dplyr est un package de traitement de données qui contient une grammaire de manipulation des données grâce à quelques verbes. Chaque verbe va résoudre un défi de manipulation de données en appliquant une action bien précise. L'étudiante a introduit les 8 verbes à la fréquence dútilisation la plus élevé.
+
++ Slice() : sélectionne et extrait les lignes d'un tableau selon leur positions.
++ Filter() : sélectionne toutes les lignes d'un tableau qui respectent une condition définie. 
++ Select() : extrait les colonnes d'un tableau de données.
++ Rename() : renomme des colonnes.
++ Arrange() : ordonne les résultats d'une execution selon un ordre bien précis.
++ Mutate() : crée de nouvelles colonnes dans le tableau de données.
++ Group_by() : définit des groupes de lignes à partir des valeurs d’une ou plusieurs colonnes.
++ Summarise(): agrège les lignes d'un tableau en effectuant une opération de résumé sur une ou plusieurs colonnes.
+
+#### **Code R**
+Dans cette partie, nous allons donner l'exemple du processus d'execution d'un verbe dplyr (*slice()*). Le même principe est appliqué pour le reste des verbes.
+
+```{r eval=FALSE, include=TRUE}
+# On importe la librairie dplyr
+library(dplyr) 
+library(tibble) 
+
+# On ouvre un fichier la base de données fournies en format CSV
+data <- read.csv2("c:/Users/Soukaina/Documents/r_project/test.csv")
+# On convertit en objet tibble (objet proche des data frames)
+data <- as_tibble(data) 
+# On sélectionne et extrait les 10 premières lignes du tableau data
+slice(data, 10)
+```
+
+
+#### **Evaluation sur critères**
+
+- *Le plan* : (4/4) Bon plan, Facile à suivre
+- *la lisibilité du code R* : (4/4)
+- *La compréhension globale et qualité rédactionnnel*: (4/4) peu de fautes
+- *L'esthétiaue du rendu*: (4/4) bonne mise en page et images sympatiques.
+- *Bibliographie* (3/4) : Sitographie complète mais peut être améliorée avec une normalisation 
+
+#### **Conclusion résumant l'appréciation du travail**
+
+L'étudiante a fournit un très bon travail en géneral. Ce travail peut s'améliorer si il y a respect des normes de bibliographies comme APA.. 
+
+# 3. Evaluation des 5 autres travaux en R
+
+## Titre 2 : JANITOR 
+
+Lien: [Cliquez ici](https://github.com/MarionD436/PSB1-X/blob/main/JANITOR%20DOCUMENTATION.pdf) 
+
+Noms d'auteurs :**Olfa LAMTI**, **Imen DERROUICHE**, **Marion Danyach**
+
+#### **Synthèse**
+Janitor est un Package qui sert à nettoyer les jeux de données. Ce package est facile d'utilisation et un moyen rapide pour les débutants de naviguer sous R. Ces fonctions se rapprochent des fonctions sous Excel. Les fonctions que nous interprétées sont les suivantes :
+
++ Clean_names() : donne en sortie un tableau avec des intitulés de colonnes remis au même format que la valeur de l'input.
++ Tabyl() :sert à appeler rapidement un data frame qui est pipée au préalable (*%*)
++ Remove empty () : cette fonction s'utilise lors de l'ímport d'un fichier excel par exemple et va supprimer les NA.
++ Adorn_totals(): permets d'ajouter une colonne de totaux.
++ Adorn_pct_formatting(): va convertir les valeurs en pourcentages
++ Get_dupes() : permets de trouver tous les doublons de la valeur de l'input dans le tableau.
+
+#### **Code R**
+Dans cette partie, nous allons donner l'exemple d'execution d'une fonction du package Janitor.
+
+```{r eval=FALSE, include=TRUE}
+# Nous commencons par importer Janitor,
+library(janitor)
+
+# la fonction va importer le ficher Excel, remets en forme les intitulés de 
+# colonnes et ensuite supprimer les valeurs NA 
+x = read_excel("/path") %>% 
+  clean_names() %>% remove_empty()
+````
+
+#### **Evaluation sur critères**
+
+- *Le plan* : (1/4) pas de plan, mais assez clair à suivre, pas de logique d'organisation.
+- *la lisibilité du code R* : (3/4): pas de commentaires
+- *La compréhension globale et qualité rédactionnnel*: (4/4) peu de fautes
+- *L'esthétiaue du rendu*: (3/4) Pas de shémas, pas d'ímages
+- *Bibliographie* (0/4) : manquante 
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Le package est très bien expliqué par les étudiants mais malheureusement l'organisation du papier n'est pas structurelle. Mais la bibliographie est très importante.
+
+
+## Titre 3 : dabr 
+
+Lien: [Cliquez ici]https://github.com/aserreau/PSB1/blob/main/Travaux%20Packages/dabr.pdf) 
+
+Noms d'auteurs : **Corentin Bretonniere** & **Antoine Serreau**
+
+#### **Synthèse**
+
+Le package "dabr" sert à la gestion de bases de données sous R grâce à une architecture Query. Les fonctions abordées dans le papier sont :
+
++ fonction "dbconnect" : permet de connecter la database
++ fonction "is.connected" : vérifie que la table est bien connectée
++ fonction "close_conn" : permet, en opposition à dbconnect, de fermer la connection à une data base.
++ fonction "list_tables" : sert à visualiser les colonnes de notre database
++ fonction "delete" : sert à supprimer une requete (query)
++ fonction "select_all" : permet de selection toute une table
++ fonction "select" : permet de selectionner une colonne de la table
++ fonction "update": sert à mettre à jour la table
++ fonction "get_attr" : permet d'avoir la liste des attributs de la table qu'on utilise.
++ fonction "quote": permet d'ajouter une citation sous forme de string.
+
+
+
+#### **Code R**
+Exemple d'un bout de code abordé :
+
+```{r eval=FALSE, include=TRUE}
+# Nous commencons par importer dabr,
+library(dabr)
+
+# permet d'avoir la liste des attributs de la table conn
+get_attr <- function(conn, ...) {
+  UseMethod("get_attr", conn)
+}
+dabr::get_attr(conn, "top50")
+```
+
+
+#### **Evaluation sur critères**
+
+- *Le plan* : (2/4) pas de plan, mais facile à suivre
+- *la lisibilité du code R* : (3/4) pas de commentaires
+- *La compréhension globale et qualité rédactionnnel*: (4/4) peu de fautes
+- *L'esthétiaue du rendu*: (4/4) bonne mise en page et pas de visualisations.
+- *Bibliographie* (0/4) : manquante 
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Le travail est explicite et assez bien expliqué, les étudiants ont réussi à simplifier la compréhension du package dabr même pour les débutants. Mais la bibliographie est très importante.
+
+
+## Titre 4 : StringR 
+
+Lien: [Cliquez ici](https://github.com/LeoBsn/PSB-PROJECT/blob/main/Manipuler%20des%20string%20avec%20R.pdf) 
+
+Noms d'auteurs : **Léonard Boisson**
+
+
+#### **Synthèse**
+
+Le package StringR agit comme une simple 'enveloppe' permettant de manipuler des chaînes de caractères pour un rendu plus cohérents, simples et faciles à utiliser. Toutes les fonctions de Stringr renvoient des structures de données de sortie qui correspondent aux structures de données reçues en entrée par d'autres fonctions du package. La dernière fonction simplifie grandement l'utilisation du résultat d'une fonction comme argument d'entrée d'une autre fonction. StringR permet dans les cas les conceptions les plus poussées de faire du text mining sur les chaines de caractères.  
+
+#### **Code R**
+
+Exemple d'un bout de code abordé :
+```{r eval=TRUE, include=TRUE}
+# Nous commencons par importer Stringr,
+library(stringr)
+# convertir les chaines de caractère en majuscule ET en minuscule
+str_to_lower ('LAPIN')
+str_to_upper ('majorie')
+```
+
+
+#### **Evaluation sur critères**
+
+- *Le plan* : (4/4) Bon plan, Facile à suivre
+- *la lisibilité du code R* : (4/4)
+- *La compréhension globale et qualité rédactionnnel*: (4/4) peu de fautes
+- *L'esthétiaue du rendu*: (4/4) bonne mise en page et images sympatiques.
+- *Bibliographie* (3/4) : Sitographie complète mais peut être améliorée avec une normalisation 
+
+#### **Conclusion résumant l'appréciation du travail**
+
+
+
+## Titre 5 : data.table 
+
+Lien: [Cliquez ici](https://github.com/clairemazzucato/PSBX/blob/main/Packages/Data.table/Package-data.table.pdf) 
+
+Noms d'auteurs : **Claire MAZZUCATO** & **Adrien JUPITER**
+
+
+#### **Synthèse** 
+
+Le package data.table est un package de manipulation de data frames appelé data table. Ce package a les mêmes fonctionnalités que le package dplyr (vu au préalable). Pour travailler avec ce package il va falloir tout d'abord convertir les dataframes en datatable. La conversion est faite soit via *as.data.table()* qui va copier la dataframe en objet data.table vers une nouvelle variable ou le *setDT()* qui va convertir l'objet lui-même en un nouveau type : le data.table. Le travail comporte 5 types de manipulations possibles grâce à data.table :
+
++ Le filtrage
++ La sélection des données
++ La renomination des colonnes
++ Le regroupage
++ Les jointures
++ Les tableaux croisés dynamiques
+
+#### **Code R**
+Exemple d'un bout de code abordé :
+
+```{r eval=FALSE, include=TRUE}
+# Nous commencons par importer dabr,
+library(data.table)
+# Nous allons créer une copie de BDD grace à setDT()
+BDD_copy <- copy(BDD)
+setDT(BDD_copy)
+class(BDD_copy)
+```
+
+
+#### **Evaluation sur critères**
+
+- *Le plan* : (3/4) pas de plan, Facile à suivre
+- *la lisibilité du code R* : (4/4)
+- *La compréhension globale et qualité rédactionnnel*: (4/4) peu de fautes
+- *L'esthétiaue du rendu*: (4/4) bonne mise en page et images sympatiques.
+- *Bibliographie* (4/4) : Sitographie complète mais peut être améliorée avec une normalisation 
+
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Le travail des étudiants est assez complet, l'ajout d'un plan et d'une sitographie avec une normalisation comme APA (regardez Scribr.com), peut énormement augmenter la qualité du travail.
+
+## Titre 6 : GGPLOT2
+
+Lien: [Cliquez ici](https://github.com/AkramBensalemPSB/PSB/blob/main/package_ggplot2.pdf) 
+
+Noms d'auteurs :**BenYoussef Salah**, **Bensalem Akram**, **Abbes Ahmed** 
+
+#### **Synthèse** 
+
+GGPLOT2 est un package de création de graphiques. Ce package par "couches successives". La première ("la couche cavenas")va être indiquer le jeu de données et les variables qui nous intéressent, la deuxième va par exemple indiquer le type de graphe et ainsi de suite. 3 types de graphiques sont introduit par les étudiants :
+
++ geom_point() : permet de produire un nuage de point
++ geom_boxplot() : permet de produire un diagramme en violon
++ geom_bar() : permet de produire un graphique en bâtons 
+
+#### **Code R** 
+
+Les arguments de base du packages :
+
+```{r eval=FALSE, include=TRUE}
+# Nous commencons par importer ggplot,
+library(ggplot)
+# ggplot va comporter 2 arguments de bases, la BDD et les axes des données
+# à visualiser qu'on saisira sous aes()
+ggplot(databaseExample, aes(x= , y= ))
+```
+
+#### **Evaluation sur critères**
+
+- *Le plan* : (3/4) Pas de plans, mais structure facile à suivre
+- *la lisibilité du code R* : (1/4) : peu de bouts de code
+- *La compréhension globale et qualité rédactionnnel*: (4/4) peu de fautes
+- *L'esthétiaue du rendu*: (2/4) bonne mise en page mais pas d'élements de visualisation
+- *Bibliographie* (0/4) : manquante 
+
+#### **Conclusion résumant l'appréciation du travail**
+
+Le travail est très clair dans son ensemble. L'étudiant a réussi l'explication du package. Mais parmi les axes d'amélioration serait l'ajout d'éléments visuels, des bouts de code, un plan et une bibliographie.
